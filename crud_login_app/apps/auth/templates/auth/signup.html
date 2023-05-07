@@ -1,0 +1,31 @@
+{% extends 'auth/base.html' %}
+{% block title %}認証ページ{% endblock %}
+{% block content %}
+    <h1>新規登録</h1>
+    <form action="{{ url_for('auth.signup', next=request.args.get('next')) }}" method="POST", novalidate="novalidate">
+        {% for message in get_flashed_messages() %}
+            <div class="flash">{{ message }}</div>
+        {% endfor %}
+        {{ form.csrf_token}}
+        <p>
+            {{form.username.label}}{{ form.username }}
+        </p>
+        {% if error in form.username.errors %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        <p>
+            {{form.email.label}}{{ form.email }}
+        </p>
+        {% if error in form.email.errors %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        <p>
+            {{form.password.label}}{{ form.password }}
+        </p>
+        {% if error in form.password.errors %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        <p>{{ form.submit() }}</p>
+    </form>
+    <button><a href="{{ url_for('auth.login') }}">ログイン</a></button>
+{% endblock %}

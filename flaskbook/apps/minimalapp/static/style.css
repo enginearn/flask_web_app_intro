@@ -1,0 +1,22 @@
+body {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1000px;
+}
+
+h1 {
+    color: aqua;
+}
+
+th {
+    text-align: right;
+}
+
+input :not #btn {
+    width: 100%;
+}
+
+textarea {
+    width: 100%;
+    resize: none;
+}

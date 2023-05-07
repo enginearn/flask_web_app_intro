@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            href="{{url_for('static', filename='style.css')}}"
+            rel="stylesheet"
+        />
+        <title>お問い合わせフォーム</title>
+    </head>
+    <body>
+        <h2>お問い合わせフォーム</h2>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{message}}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        <form
+            action="{{url_for('contact_complete')}}"
+            method="POST"
+            novalidate="novalidate"
+        >
+            <table>
+                <tr>
+                    <th>お名前: </th>
+                    <td>
+                        <input
+                            type="text"
+                            name="username"
+                            value="{{username}}"
+                            placeholder="ユーザー名"
+                        />
+                    </td>
+                </tr>
+                <tr>
+                    <th>メールアドレス: </th>
+                    <td>
+                        <input type="text" name="email" value="{{email}}" placeholder="sample@example.com"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>お問い合わせ内容: </th>
+                    <td>
+                        <textarea
+                            name="description"
+                            placeholder="お問い合わせ内容"
+                        >
+{{description}}</textarea
+                        >
+                    </td>
+                </tr>
+            </table>
+            <input id="btn" type="submit" value="送信" />
+        </form>
+    </body>
+</html>

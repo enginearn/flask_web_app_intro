@@ -1,0 +1,15 @@
+{% extends 'auth/base.html' %}
+{% block title %}認証ページ{% endblock %}
+{% block content %}
+    <h1>ログイン</h1>
+    <form action="{{ url_for('auth.login') }}" method="post">
+        <dl>
+            <dt>ユーザー名</dt>
+            <dd><input type="text" name="username"></dd>
+            <dt>パスワード</dt>
+            <dd><input type="password" name="password"></dd>
+        </dl>
+        <p><input type="submit" value="ログイン"></p>
+    </form>
+    <button><a href="{{ url_for('auth.register') }}">新規登録</a></button>
+{% endblock %}

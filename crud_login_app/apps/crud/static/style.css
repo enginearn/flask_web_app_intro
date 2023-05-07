@@ -1,0 +1,28 @@
+body {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1000px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid #c0c0c0;
+    text-align: center;
+}
+
+button a {
+    text-decoration: none;
+}
+
+.crud {
+    font-style: italic;
+}
+
+.error {
+    color: red;
+}
+

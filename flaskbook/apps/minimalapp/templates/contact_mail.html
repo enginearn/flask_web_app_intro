@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <title>【受付完了】お問い合わせを受け付けました。</title>
+    </head>
+    <body>
+        <p>{{ username }}さま</p>
+        <p>お問い合わせありがとうございます。</p>
+        <p>以下の内容でお問い合わせを受け付けました。</p>
+        <table>
+            <tr>
+                <th>お名前</th>
+                <td>{{ username }}</td>
+            </tr>
+            <tr>
+                <th>お問い合わせ内容</th>
+                <td>{{ description }}</td>
+            </tr>
+        </table>
+    </body>
+</html>

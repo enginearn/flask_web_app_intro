@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link
+            href="{{url_for('static', filename='style.css')}}"
+            rel="stylesheet"
+        />
+        <title>お問い合わせ完了</title>
+    </head>
+    <body>
+        <h2>お問い合わせを受け付けました。</h2>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{message}}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+
+    </body>
+</html>
